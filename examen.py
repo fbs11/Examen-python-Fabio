@@ -33,15 +33,18 @@ libros = [l1, l2, l3]
 
 def mas_antiguos(lista_libros, tiempo):
     res = []
+
     for i in libros:
-        if Libro.get_anyo() > 1900:
-            res.append(i.get_autor)
+        if i.get_anyo() > 1900 and i.get_anyo() < 2021 and i.get_anyo():
+            res.append(i.get_autor())
         else:
             raise ValueError("El año no es valido")
+        
+    print(res)
     return res
 
 
 """ MAIN """
 
 get_list(fr)
-mas_antiguos(libros, 2000)
+mas_antiguos(libros, 1980)
